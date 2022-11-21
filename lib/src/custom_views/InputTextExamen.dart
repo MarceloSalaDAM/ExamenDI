@@ -17,6 +17,19 @@ class IPExamen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField();
+    return TextFormField(
+      obscureText: contra,
+      controller: myController,
+      cursorColor: Colors.black,
+      maxLength: 100,
+      decoration: InputDecoration(
+        labelText: titulo,
+        labelStyle: TextStyle(
+          color: Colors.black,
+        ),
+        helperText: textoGuia,
+        suffixIcon: Icon(Icons.add_circle_outlined),
+      ),
+    );
   }
 }
