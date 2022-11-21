@@ -1,6 +1,7 @@
 //En este fichero Dart crearemos la clase LoginView del examen
 
 import 'package:examen_din1/src/custom_views/InputTextExamen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewExamen extends StatelessWidget {
@@ -17,6 +18,22 @@ class LoginViewExamen extends StatelessWidget {
     contra: true,
   );
 
+  void btnAceptarPressed(
+      String emailAdress, String password, BuildContext context) async {
+    try {
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailAdress,
+        password: password,
+      );
+      Navigator.of(context).popAndPushNamed('/Home');
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not found') {
+        print('No user found for that email');
+      } else if (e.code == 'wrong password') {
+        print('Wrong password provided for that user.');
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +55,16 @@ class LoginViewExamen extends StatelessWidget {
             children: [
               OutlinedButton(
                 onPressed: () {
-                  // Respond to button press
+                  btnAceptarPressed(iUser.getText(), iPass.getText(), context);
+                  print("SESION INICIADA CON----------->>> " +
+                      " " +
+                      iUser.getText() +
+                      " " +
+                      iPass.getText());
                 },
                 child: Text("ACEPTAR"),
               )
-
             ],
-
           )
         ],
       )),
