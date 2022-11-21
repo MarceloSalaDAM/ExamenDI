@@ -17,6 +17,7 @@ class LoginViewExamen extends StatelessWidget {
     contra: true,
   );
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +33,19 @@ class LoginViewExamen extends StatelessWidget {
         children: [
           iUser,
           iPass,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              OutlinedButton(
+                onPressed: () {
+                  // Respond to button press
+                },
+                child: Text("ACEPTAR"),
+              )
+
+            ],
+
+          )
         ],
       )),
       backgroundColor: Colors.white,
