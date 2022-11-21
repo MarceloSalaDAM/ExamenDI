@@ -15,6 +15,10 @@ class IPExamen extends StatelessWidget {
     this.contra = false,
   }) : super(key: key);
 
+  String getText() {
+    return myController.text;
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
