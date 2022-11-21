@@ -6,7 +6,7 @@ class IPExamen extends StatelessWidget {
   final String titulo;
   final String textoGuia;
   final bool contra;
-  final TextEditingController myController = TextEditingController(text: " ");
+  final TextEditingController myController = TextEditingController(text: "");
 
   IPExamen({
     Key? key,

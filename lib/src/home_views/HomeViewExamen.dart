@@ -17,7 +17,24 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
       ),
-      body: Center(child: Column()),
+      body: Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.of(context).popAndPushNamed('/Login'); ;
+
+                },
+                child: Text("ACEPTAR"),
+              )
+            ],
+          )
+        ],
+
+      )),
       backgroundColor: Colors.white,
     );
   }
