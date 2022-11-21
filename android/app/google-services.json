@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "770376045801",
+    "project_id": "examen-di-1",
+    "storage_bucket": "examen-di-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770376045801:android:ec1c0c0b800b267ac20c78",
+        "android_client_info": {
+          "package_name": "com.example.examen_din1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770376045801-bt3t4cc3v0cn3lt7kpu4i7heidn0dn8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoPAuzoOX73ZQEi0LEp5X3lw13fCWPAUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770376045801-bt3t4cc3v0cn3lt7kpu4i7heidn0dn8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
