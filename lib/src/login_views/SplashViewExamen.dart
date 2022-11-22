@@ -13,6 +13,33 @@ class SplashViewExamen extends StatefulWidget {
 }
 
 class _SplashViewExamenState extends State<SplashViewExamen> {
+  @override
+  void initState() {
+    super.initState();
+    descargaDatos();
+  }
+
+  void descargaDatos() async {
+    await Future.delayed(Duration(seconds: 3));
+
+    if (FirebaseAuth.instance.currentUser == null) {
+      setState(() {
+        Navigator.of(context).popAndPushNamed("/Login");
+      });
+    } else {
+      bool existe = await checkExistingProfile();
+      if (existe) {
+        setState(() {
+          Navigator.of(context).popAndPushNamed("/Home");
+        });
+      } else {
+        setState(() {
+          Navigator.of(context).popAndPushNamed("/OnBoarding");
+        });
+      }
+    }
+  }
+
   Future<bool> checkExistingProfile() async {
     String? idUser = FirebaseAuth.instance.currentUser?.uid;
     FirebaseFirestore db = FirebaseFirestore.instance;
