@@ -78,6 +78,15 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
           children: [
             iNombre,
             iApellidos,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                OutlinedButton(
+                  onPressed: () {},
+                  child: Text("CONFIRMAR"),
+                )
+              ],
+            )
           ],
         ),
       ),
