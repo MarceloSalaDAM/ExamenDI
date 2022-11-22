@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:examen_din1/src/custom_views/InputTextExamen.dart';
+import 'package:examen_din1/src/firebase_objects/UsuarioExamen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,22 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
     }
   }
 
+  void acceptPressed(
+      String nombre, String apellidos, BuildContext context) async {
+    UsuarioExamen usuario = UsuarioExamen(
+      nombre: nombre,
+      apellidos: apellidos,
+    );
+
+    await db
+        .collection("usuarios")
+        .doc(FirebaseAuth.instance.currentUser?.uid)
+        .set(usuario.toFirestore())
+        .onError((e, _) => print("Error writing document: $e"));
+
+    Navigator.of(context).popAndPushNamed("/Home");
+  }
+
   @override
   Widget build(BuildContext context) {
     IPExamen iNombre = IPExamen(
@@ -45,6 +62,8 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
       textoGuia: "Introducir apellidos",
       titulo: "PAIS",
     );
+
+    FirebaseFirestore db = FirebaseFirestore.instance;
 
     return Scaffold(
       appBar: AppBar(
