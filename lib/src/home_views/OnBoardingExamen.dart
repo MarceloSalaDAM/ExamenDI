@@ -10,6 +10,7 @@ class OnBoardingViewExamen extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
+    // TODO: implement createState
     return _OnBoardingViewExamenState();
   }
 }
@@ -60,10 +61,10 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
     );
     IPExamen iApellidos = IPExamen(
       textoGuia: "Introducir apellidos",
-      titulo: "PAIS",
+      titulo: "APELLIDOS",
     );
 
-    FirebaseFirestore db = FirebaseFirestore.instance;
+   /* FirebaseFirestore db = FirebaseFirestore.instance;
 
     void btnConfirmarPressed() async {
       UsuarioExamen usuario = UsuarioExamen(
@@ -77,7 +78,7 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
           .set(usuario.toFirestore())
           .onError((e, _) => print("Error writing document: $e"));
       Navigator.of(context).popAndPushNamed("/Login");
-    }
+    }*/
 
     return Scaffold(
       appBar: AppBar(
@@ -97,7 +98,12 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
               children: [
                 OutlinedButton(
                   onPressed: () {
-                    btnConfirmarPressed;
+                   acceptPressed(iNombre.getText(), iApellidos.getText(), context);
+                    print("NOMBRE " +
+                        iNombre.getText() +
+                        " " +
+                        "APELLIDOS " +
+                        iApellidos.getText());
                   },
                   child: Text("CONFIRMAR"),
                 )

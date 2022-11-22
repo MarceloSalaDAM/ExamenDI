@@ -5,8 +5,8 @@ class UsuarioExamen {
   final String? apellidos;
 
   UsuarioExamen({
-    this.nombre = "",
-    this.apellidos = "",
+    this.nombre = " ",
+    this.apellidos = " ",
   });
 
   factory UsuarioExamen.fromFirestore(

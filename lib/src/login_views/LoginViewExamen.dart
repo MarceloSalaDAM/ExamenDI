@@ -7,17 +7,6 @@ import 'package:flutter/material.dart';
 class LoginViewExamen extends StatelessWidget {
   LoginViewExamen({Key? key}) : super(key: key);
 
-  IPExamen iUser = IPExamen(
-    titulo: "EMAIL",
-    textoGuia: "Introducir su email",
-  );
-
-  IPExamen iPass = IPExamen(
-    titulo: "PASSWORD",
-    textoGuia: "Introducir su clave",
-    contra: true,
-  );
-
   void btnAceptarPressed(
       String emailAdress, String password, BuildContext context) async {
     try {
@@ -26,7 +15,7 @@ class LoginViewExamen extends StatelessWidget {
         password: password,
       );
       print("LOGEADO CON EXITO");
-      Navigator.of(context).popAndPushNamed('/Home');
+      Navigator.of(context).popAndPushNamed('/OnBoarding');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not found') {
         print('No user found for that email');
@@ -38,6 +27,16 @@ class LoginViewExamen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    IPExamen iUser = IPExamen(
+      titulo: "EMAIL",
+      textoGuia: "Introducir su email",
+    );
+
+    IPExamen iPass = IPExamen(
+      titulo: "PASSWORD",
+      textoGuia: "Introducir su clave",
+      contra: true,
+    );
     return Scaffold(
       appBar: AppBar(
         title: const Text("LOGIN VIEW EXAMEN"),
