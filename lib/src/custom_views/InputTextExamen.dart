@@ -31,6 +31,10 @@ class IPExamen extends StatelessWidget {
         labelStyle: TextStyle(
           color: Colors.black,
         ),
+        prefixIcon: Image(
+          image: AssetImage("assets/cr7.png"),
+          width: 5,
+        ),
         helperText: textoGuia,
         suffixIcon: Icon(Icons.add_circle_outlined),
       ),
