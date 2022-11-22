@@ -65,12 +65,26 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
 
     FirebaseFirestore db = FirebaseFirestore.instance;
 
+    void btnConfirmarPressed() async {
+      UsuarioExamen usuario = UsuarioExamen(
+        nombre: iNombre.getText(),
+        apellidos: iApellidos.getText(),
+      );
+
+      db
+          .collection("usuarios")
+          .doc(FirebaseAuth.instance.currentUser?.uid)
+          .set(usuario.toFirestore())
+          .onError((e, _) => print("Error writing document: $e"));
+      Navigator.of(context).popAndPushNamed("/Login");
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("ON BOARDING EXAMEN"),
         //esta barra de código es para quitar el icono de la flecha arriba a la izquierda de mi aplicacion
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.blue.withBlue(120),
+        backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -82,7 +96,9 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    btnConfirmarPressed;
+                  },
                   child: Text("CONFIRMAR"),
                 )
               ],
