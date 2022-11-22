@@ -1,3 +1,4 @@
+import 'package:examen_din1/src/home_views/OnBoardingExamen.dart';
 import 'package:examen_din1/src/login_views/LoginViewExamen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class App extends StatelessWidget {
         '/Login': (context) => LoginViewExamen(),
         '/Home': (context) => HomeViewExamen(),
         '/Splash': (context) => SplashViewExamen(),
+        '/OnBoarding': (context) => OnBoardingViewExamen(),
+
 
 
 

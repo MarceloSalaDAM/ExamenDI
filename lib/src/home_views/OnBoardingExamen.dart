@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:examen_din1/src/custom_views/InputTextExamen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +15,25 @@ class OnBoardingViewExamen extends StatefulWidget {
 
 class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
   var txt = TextEditingController();
+  FirebaseFirestore db = FirebaseFirestore.instance;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    checkExistingProfile();
+  }
+
+  void checkExistingProfile() async {
+    String? idUser = FirebaseAuth.instance.currentUser?.uid;
+    final docRef = db.collection("usuarios").doc(idUser);
+
+    DocumentSnapshot docsnap = await docRef.get();
+
+    if (docsnap.exists) {
+      Navigator.of(context).popAndPushNamed("/Home");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
