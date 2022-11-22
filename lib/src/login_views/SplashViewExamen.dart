@@ -58,9 +58,9 @@ class _SplashViewExamenState extends State<SplashViewExamen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(30, 55, 0, 10),
+            padding: EdgeInsets.fromLTRB(10, 55, 10, 10),
             child: Image(
-              image: AssetImage("assets/images/cr7.jpg"),
+              image: AssetImage("assets/cr7.png"),
             ),
           ),
           const LinearProgressIndicator(
