@@ -54,7 +54,20 @@ class _SplashViewExamenState extends State<SplashViewExamen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-      child: Text("SPLASH"),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(30, 55, 0, 10),
+            child: Image(
+              image: AssetImage("assets/images/cr7.jpg"),
+            ),
+          ),
+          const LinearProgressIndicator(
+            semanticsLabel: 'Circular progress indicator',
+          )
+        ],
+      ),
     ));
   }
 }
