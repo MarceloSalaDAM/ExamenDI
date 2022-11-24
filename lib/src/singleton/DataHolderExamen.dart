@@ -2,6 +2,8 @@ import 'package:examen_din1/src/firebase_objects/BichosExamen.dart';
 import 'package:examen_din1/src/firebase_objects/UsuarioExamen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../firebase_objects/FbAdminExamen.dart';
+
 class DataHolderExamen {
   static final DataHolderExamen _dataHolderExamen = new DataHolderExamen._internal();
 
@@ -10,6 +12,7 @@ class DataHolderExamen {
   String sMensaje = "";
   UsuarioExamen usuario=UsuarioExamen();
   BichosExamen selectedBicho= BichosExamen();
+  FbAdminExamen fbAdminExamen = FbAdminExamen();
 
 
   DataHolderExamen._internal() {
@@ -22,12 +25,12 @@ class DataHolderExamen {
   }
 
   Future<void> descargarMIPerfil() async {
-    usuario = await fbAdmin2
+    usuario = await fbAdminExamen
         .descargarPerfil(FirebaseAuth.instance.currentUser?.uid) as UsuarioExamen;
   }
 
   Future<void> descargarPerfilGenerico(String? idPerfil) async {
-    await fbAdmin2.descargarPerfil(idPerfil) as UsuarioExamen;
+    await fbAdminExamen.descargarPerfil(idPerfil) as UsuarioExamen;
   }
 
   bool isMIPerfilDownloaded() {
