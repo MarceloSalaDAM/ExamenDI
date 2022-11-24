@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+import '../list_items/BichosItemExamen.dart';
 
 class HomeViewExamen extends StatefulWidget {
   @override
@@ -8,6 +11,16 @@ class HomeViewExamen extends StatefulWidget {
 }
 
 class _HomeViewExamenState extends State<HomeViewExamen> {
+  FirebaseFirestore db=FirebaseFirestore.instance;
+  String nombre="";
+  List<BichosItemExamen> bichos= [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
