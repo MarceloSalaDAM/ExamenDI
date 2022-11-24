@@ -96,8 +96,7 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-
-                /*OutlinedButton(
+                OutlinedButton(
                   onPressed: () {
                     acceptPressed(
                         iNombre.getText(), iApellidos.getText(), context);
@@ -108,7 +107,7 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
                         iApellidos.getText());
                   },
                   child: Text("CONFIRMAR"),
-                ),*/
+                ),
               ],
             )
           ],
