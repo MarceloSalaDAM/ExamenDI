@@ -41,7 +41,7 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
   void listItemShortClicked(int index) {
     print("CR7: " + bichos[index].tipo!);
     DataHolderExamen().selectedBicho = bichos[index];
-    Navigator.of(context).pushNamed("/CR7");
+    Navigator.of(context).pushNamed("/Cr7View");
   }
 
   @override
