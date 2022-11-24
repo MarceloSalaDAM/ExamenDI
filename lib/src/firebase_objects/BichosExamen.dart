@@ -4,11 +4,13 @@ class BichosExamen {
   final String? tipo;
   final String? equipo;
   final String? anio;
+  final String? image;
 
   BichosExamen({
     this.tipo = "",
     this.equipo = "",
     this.anio = "",
+    this.image = "",
   });
 
   factory BichosExamen.fromFirestore(
@@ -17,7 +19,7 @@ class BichosExamen {
   ) {
     final data = snapshot.data();
     return BichosExamen(
-        tipo: data?['tipo'], equipo: data?['equipo'], anio: data?['anio']);
+        tipo: data?['tipo'], equipo: data?['equipo'], anio: data?['anio'], image: data?['image']);
   }
 
   Map<String, dynamic> toFirestore() {
@@ -25,6 +27,7 @@ class BichosExamen {
       if (tipo != null) "tipo": tipo,
       if (equipo != null) "equipo": equipo,
       if (anio != null) "anio": anio,
+      if (image != null) "image": image,
     };
   }
 }
