@@ -15,6 +15,14 @@ class BichosItemExamen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw UnimplementedError();
+    throw ListTile(
+        title: Text(tituloLista),
+        leading: Image(
+          image: new AssetImage("assets/cr7.png"),
+        ),
+        trailing: Icon(Icons.next_plan_outlined),
+        onTap: () {
+          onShortClick(index);
+        });
   }
 }
