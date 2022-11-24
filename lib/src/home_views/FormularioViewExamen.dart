@@ -26,6 +26,8 @@ class _FormularioViewExamen extends State<FormularioViewExamen> {
     super.initState();
   }
 
+/*  LA SUBIDA DE IMAGENES AL FIRESTORE NO ME FUNCIONA, NO HE SIDO CAPAZ DE
+  DESCUBRIR COMO HACRELO*/
   void confirmPressed(String tipo, String equipo, String anio, String image,
       BuildContext context) async {
     BichosExamen bicho = BichosExamen(

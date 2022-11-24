@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:examen_din1/src/firebase_objects/Cr7InfoExamen.dart';
 import 'package:examen_din1/src/home_views/OnBoardingExamen.dart';
 import 'package:examen_din1/src/login_views/LoginViewExamen.dart';
 import 'package:flutter/cupertino.dart';

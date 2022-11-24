@@ -64,7 +64,7 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
       titulo: "APELLIDOS",
     );
 
-   /* FirebaseFirestore db = FirebaseFirestore.instance;
+    /* FirebaseFirestore db = FirebaseFirestore.instance;
 
     void btnConfirmarPressed() async {
       UsuarioExamen usuario = UsuarioExamen(
@@ -96,9 +96,11 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                OutlinedButton(
+
+                /*OutlinedButton(
                   onPressed: () {
-                   acceptPressed(iNombre.getText(), iApellidos.getText(), context);
+                    acceptPressed(
+                        iNombre.getText(), iApellidos.getText(), context);
                     print("NOMBRE " +
                         iNombre.getText() +
                         " " +
@@ -106,7 +108,7 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
                         iApellidos.getText());
                   },
                   child: Text("CONFIRMAR"),
-                )
+                ),*/
               ],
             )
           ],

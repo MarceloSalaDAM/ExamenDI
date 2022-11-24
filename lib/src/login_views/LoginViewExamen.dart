@@ -37,6 +37,9 @@ class LoginViewExamen extends StatelessWidget {
       textoGuia: "Introducir su clave",
       contra: true,
     );
+/*
+    EL BOTON NO LO HE METIDO EN UNA CARPETA CUSTOM PORQUE SOLO LO VOY A UTILIZAR EN ESTA VENTANA,
+    POR LO TANTO LO HE CREADO AQUI MISMO*/
     return Scaffold(
       appBar: AppBar(
         title: const Text("LOGIN VIEW EXAMEN"),
@@ -53,7 +56,23 @@ class LoginViewExamen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              OutlinedButton(
+              MaterialButton(
+                padding: EdgeInsets.all(8.0),
+                textColor: Colors.black,
+                splashColor: Colors.greenAccent,
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(),
+                    image: DecorationImage(
+                        image: AssetImage('assets/cr7.png'),
+                        fit: BoxFit.scaleDown),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("ACEPTAR"),
+                  ),
+                ),
+                // ),
                 onPressed: () {
                   btnAceptarPressed(iUser.getText(), iPass.getText(), context);
                   print("SESION INICIADA CON----------->>> " +
@@ -62,8 +81,7 @@ class LoginViewExamen extends StatelessWidget {
                       " " +
                       iPass.getText());
                 },
-                child: Text("ACEPTAR"),
-              )
+              ),
             ],
           )
         ],
