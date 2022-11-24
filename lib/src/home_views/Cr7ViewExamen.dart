@@ -16,33 +16,31 @@ class Cr7ViewExamen extends StatelessWidget {
         children: [
           Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 10)),
           Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
             padding: EdgeInsets.fromLTRB(40, 40, 40, 40),
             child: Image.network(
               DataHolderExamen().selectedBicho.image!,
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
-            padding: EdgeInsets.fromLTRB(40, 40, 40, 40),
+            padding: EdgeInsets.fromLTRB(70, 20, 70, 20),
             color: Colors.black,
             child: Text(
               DataHolderExamen().selectedBicho.equipo!,
-              style: TextStyle(fontSize: 25,color: Colors.white),
+              style: TextStyle(fontSize: 25, color: Colors.white),
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
-            padding: EdgeInsets.fromLTRB(40, 40, 40, 40),
+            margin: EdgeInsets.fromLTRB(5, 10, 5, 0),
+            padding: EdgeInsets.fromLTRB(70, 20, 70, 20),
             color: Colors.black,
             child: Text(
               DataHolderExamen().selectedBicho.anio!,
-              style: TextStyle(fontSize: 25,color: Colors.white),
+              style: TextStyle(fontSize: 25, color: Colors.white),
             ),
           ),
         ],
       )),
-      backgroundColor: Colors.red.shade50,
+      backgroundColor: Colors.grey.shade300,
     );
   }
 }
