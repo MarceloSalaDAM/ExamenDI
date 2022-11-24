@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'home_views/Cr7ViewExamen.dart';
+import 'home_views/FormularioViewExamen.dart';
 import 'home_views/HomeViewExamen.dart';
 import 'login_views/SplashViewExamen.dart';
 
@@ -24,6 +25,7 @@ class App extends StatelessWidget {
         '/OnBoarding': (context) => OnBoardingViewExamen(),
         '/Splash': (context) => SplashViewExamen(),
         '/Cr7View': (context) => Cr7ViewExamen(),
+        '/Formulario': (context) => FormularioViewExamen(),
 
       },
     );

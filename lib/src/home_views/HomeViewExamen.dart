@@ -44,6 +44,8 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
     Navigator.of(context).pushNamed("/Cr7View");
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +71,7 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
         foregroundColor: Colors.white,
         mini: true,
         onPressed: () {
-
+          Navigator.of(context).popAndPushNamed('/Formulario');
         },
         child: Icon(Icons.add),
       ),
