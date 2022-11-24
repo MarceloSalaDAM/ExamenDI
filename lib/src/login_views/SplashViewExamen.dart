@@ -59,7 +59,7 @@ class _SplashViewExamenState extends State<SplashViewExamen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 55, 10, 10),
+            padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
             child: Image(
               image: AssetImage("assets/cr7.png"),
             ),
