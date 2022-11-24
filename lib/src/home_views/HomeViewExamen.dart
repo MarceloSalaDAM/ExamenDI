@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import '../firebase_objects/BichosExamen.dart';
 import '../list_items/BichosItemExamen.dart';
 
 class HomeViewExamen extends StatefulWidget {
@@ -11,9 +12,9 @@ class HomeViewExamen extends StatefulWidget {
 }
 
 class _HomeViewExamenState extends State<HomeViewExamen> {
-  FirebaseFirestore db=FirebaseFirestore.instance;
-  String nombre="";
-  List<BichosItemExamen> bichos= [];
+  FirebaseFirestore db = FirebaseFirestore.instance;
+  String nombre = "";
+  List<BichosExamen> bichos = [];
 
   @override
   void initState() {
@@ -23,19 +24,24 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
 
   void getCr7List() async {
     final docRef = db.collection("bichos").withConverter(
-        fromFirestore: BichosItemExamen.fromFirestore,
-        toFirestore: (BichosItemExamen bicho, _) => bicho.toFirestore());
+        fromFirestore: BichosExamen.fromFirestore,
+        toFirestore: (BichosExamen bicho, _) => bicho.toFirestore());
 
     final docsSnap = await docRef.get();
 
     setState(() {
       for (int i = 0; i < docsSnap.docs.length; i++) {
-        chatRooms.add(docsSnap.docs[i].data());
+        bichos.add(docsSnap.docs[i].data());
       }
     });
-
-
   }
+
+  void listItemShortClicked(int index) {
+    print("CR7: " + bichos[index].tipo!);
+    DataHolder2().selectedChatRoom = chatRooms[index];
+    Navigator.of(context).pushNamed("/CR7");
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +52,8 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
       ),
-      body: Center(child: Column(
+      body: Center(
+          child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
@@ -54,15 +61,14 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
             children: [
               OutlinedButton(
                 onPressed: () {
-                  Navigator.of(context).popAndPushNamed('/Login'); ;
-
+                  Navigator.of(context).popAndPushNamed('/Login');
+                  ;
                 },
                 child: Text("ACEPTAR"),
               )
             ],
           )
         ],
-
       )),
       backgroundColor: Colors.white,
     );
