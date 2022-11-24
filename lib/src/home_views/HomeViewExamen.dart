@@ -21,6 +21,22 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
     super.initState();
   }
 
+  void getCr7List() async {
+    final docRef = db.collection("bichos").withConverter(
+        fromFirestore: BichosItemExamen.fromFirestore,
+        toFirestore: (BichosItemExamen bicho, _) => bicho.toFirestore());
+
+    final docsSnap = await docRef.get();
+
+    setState(() {
+      for (int i = 0; i < docsSnap.docs.length; i++) {
+        chatRooms.add(docsSnap.docs[i].data());
+      }
+    });
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
