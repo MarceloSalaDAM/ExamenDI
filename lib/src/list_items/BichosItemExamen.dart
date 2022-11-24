@@ -15,7 +15,7 @@ class BichosItemExamen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw ListTile(
+    return ListTile(
         title: Text(tituloLista),
         leading: Image(
           image: new AssetImage("assets/cr7.png"),

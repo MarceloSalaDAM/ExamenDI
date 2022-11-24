@@ -21,6 +21,7 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    getCr7List();
   }
 
   void getCr7List() async {
