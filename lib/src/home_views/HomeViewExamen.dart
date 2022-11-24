@@ -64,6 +64,15 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
         },
         separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
+        mini: true,
+        onPressed: () {
+
+        },
+        child: Icon(Icons.add),
+      ),
       backgroundColor: Colors.white,
     );
   }
