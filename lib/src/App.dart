@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'home_views/Cr7ViewExamen.dart';
 import 'home_views/FormularioViewExamen.dart';
 import 'home_views/HomeViewExamen.dart';
+import 'login_views/RegistroViewExamen.dart';
 import 'login_views/SplashViewExamen.dart';
 
 class App extends StatelessWidget {
@@ -25,6 +26,7 @@ class App extends StatelessWidget {
         '/Splash': (context) => SplashViewExamen(),
         '/Cr7View': (context) => Cr7ViewExamen(),
         '/Formulario': (context) => FormularioViewExamen(),
+        '/Registro': (context) => RegistroViewExamen(),
 
       },
     );
