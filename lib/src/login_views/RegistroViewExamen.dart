@@ -33,10 +33,12 @@ class RegistroViewExamen extends StatelessWidget {
     IPExamen iContra = IPExamen(
       textoGuia: "Introducir contraseña",
       titulo: "CONTRASEÑA",
+      contra: true,
     );
     IPExamen iContra2 = IPExamen(
       textoGuia: "Repetir contraseña",
       titulo: "CONTRASEÑA",
+      contra: true,
     );
 
     return Scaffold(
