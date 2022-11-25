@@ -15,7 +15,7 @@ class LoginViewExamen extends StatelessWidget {
         password: password,
       );
       print("LOGEADO CON EXITO");
-      Navigator.of(context).popAndPushNamed('/OnBoarding');
+      Navigator.of(context).popAndPushNamed('/Home');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not found') {
         print('No user found for that email');

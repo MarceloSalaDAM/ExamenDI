@@ -89,9 +89,16 @@ class _FormularioViewExamen extends State<FormularioViewExamen> {
                         iAnio.getText(), iFoto.getText(), context);
                   },
                   child: Text("CONFIRMAR"),
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).popAndPushNamed('/Home');
+                  },
+                  child: Text("VOLVER \nAL HOME"),
                 )
               ],
             )
+
           ],
         ),
       ),
