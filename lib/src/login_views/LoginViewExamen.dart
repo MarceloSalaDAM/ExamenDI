@@ -82,6 +82,27 @@ class LoginViewExamen extends StatelessWidget {
                       iPass.getText());
                 },
               ),
+              MaterialButton(
+                padding: EdgeInsets.all(8.0),
+                textColor: Colors.black,
+                splashColor: Colors.greenAccent,
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(),
+                    image: DecorationImage(
+                        image: AssetImage('assets/cr7.png'),
+                        fit: BoxFit.scaleDown),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("REGISTRAR"),
+                  ),
+                ),
+                // ),
+                onPressed: () {
+                  Navigator.of(context).popAndPushNamed('/Registro');
+                },
+              ),
             ],
           )
         ],
