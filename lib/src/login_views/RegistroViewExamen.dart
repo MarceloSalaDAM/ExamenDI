@@ -4,8 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RegistroViewExamen extends StatelessWidget {
+  //Vista para el registro de usuarios de la aplicación
   RegistroViewExamen({Key? key}) : super(key: key);
 
+  //Con esta función creamos un usuario y este es añadido al firebase
   void btnRegistroPressed(
       String emailAdress, String password, BuildContext context) async {
     try {

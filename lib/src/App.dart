@@ -16,7 +16,12 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //declaramos las rutas que va a seguir nuetsra aplicación
+    /*Declaramos las rutas que va a seguir nuestra aplicación,
+    la primera que entra es el SPLASH, si no se ha iniciado sesion
+    anteriormente, nos lleva al LOGIN, si ya esta iniciada la sesión
+    nos lleva al home directamente.
+    Desde la pantalla LOGIN, podemos registrar un nuevo usuario y desde la
+    pantalla de REGISTRO, nos lleva al ONBOARDING para completar el perfil.*/
     return MaterialApp(
       initialRoute: '/Splash',
       routes: {

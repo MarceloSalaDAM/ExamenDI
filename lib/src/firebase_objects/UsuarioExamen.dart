@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UsuarioExamen {
+  /* Declaracion de los atributos de la clase Usuarios,
+  para la conexion con el Firebase*/
   final String? nombre;
   final String? apellidos;
 

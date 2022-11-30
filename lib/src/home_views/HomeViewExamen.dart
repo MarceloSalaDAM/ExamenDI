@@ -6,6 +6,7 @@ import '../firebase_objects/BichosExamen.dart';
 import '../list_items/BichosItemExamen.dart';
 
 class HomeViewExamen extends StatefulWidget {
+  //Vista del Home (pagina inicial de la aplicación)
   @override
   State<StatefulWidget> createState() {
     return _HomeViewExamenState();
@@ -24,6 +25,7 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
     getCr7List();
   }
 
+  //Descarga de los elementos de la coleccion para la lista
   void getCr7List() async {
     final docRef = db.collection("bichos").withConverter(
         fromFirestore: BichosExamen.fromFirestore,
@@ -43,8 +45,6 @@ class _HomeViewExamenState extends State<HomeViewExamen> {
     DataHolderExamen().selectedBicho = bichos[index];
     Navigator.of(context).pushNamed("/Cr7View");
   }
-
-
 
   @override
   Widget build(BuildContext context) {

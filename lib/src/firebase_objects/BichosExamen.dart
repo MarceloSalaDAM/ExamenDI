@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class BichosExamen {
+  /* Declaracion de los atributos de la clase Bichos(Tipos de Cr7),
+  para la conexion con el Firebase*/
   final String? tipo;
   final String? equipo;
   final String? anio;
@@ -19,7 +21,10 @@ class BichosExamen {
   ) {
     final data = snapshot.data();
     return BichosExamen(
-        tipo: data?['tipo'], equipo: data?['equipo'], anio: data?['anio'], image: data?['image']);
+        tipo: data?['tipo'],
+        equipo: data?['equipo'],
+        anio: data?['anio'],
+        image: data?['image']);
   }
 
   Map<String, dynamic> toFirestore() {

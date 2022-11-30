@@ -5,6 +5,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../firebase_objects/FbAdminExamen.dart';
 
 class DataHolderExamen {
+
+/*  El DATAHOLDER nos sirve para la descarga del perfil y
+  los elementos del dicho perfil*/
+
   static final DataHolderExamen _dataHolderExamen = new DataHolderExamen._internal();
 
   String sCOLLECTIONS_BICHOS_NAME = "bichos";

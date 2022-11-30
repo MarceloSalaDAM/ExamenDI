@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../singleton/DataHolderExamen.dart';
 
 class Cr7ViewExamen extends StatelessWidget {
+  //Vista de cada uno de los elementos de la lista
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

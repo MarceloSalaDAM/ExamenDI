@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewExamen extends StatefulWidget {
+/*  Vista de la pantalla de carga del inicio para poder
+  comprobar si existe el usuario, si existe el perfil, etc.*/
   SplashViewExamen({super.key});
 
   @override
@@ -20,6 +22,8 @@ class _SplashViewExamenState extends State<SplashViewExamen> {
     descargaDatos();
   }
 
+/*  Esta función descarga los datos del firebase, y dependiendo de una cosa
+  u otra nos lleva a una pantalla*/
   void descargaDatos() async {
     await Future.delayed(Duration(seconds: 3));
 

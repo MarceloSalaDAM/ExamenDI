@@ -5,8 +5,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewExamen extends StatelessWidget {
+  //Vista para el logeo a la aplicacion
   LoginViewExamen({Key? key}) : super(key: key);
 
+  /*Con esta funcion conseguimos que se logee el usuario
+  SI coincide con un usuario ya creado en el firebase*/
   void btnAceptarPressed(
       String emailAdress, String password, BuildContext context) async {
     try {

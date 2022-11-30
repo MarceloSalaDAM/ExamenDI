@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../custom_views/InputTextExamen.dart';
 
 class FormularioViewExamen extends StatefulWidget {
+  //Vista del formulario para la creación de un nuevo elemento a la lista
   FormularioViewExamen({Key? key}) : super(key: key);
 
   @override
@@ -27,7 +28,7 @@ class _FormularioViewExamen extends State<FormularioViewExamen> {
   }
 
 /*  LA SUBIDA DE IMAGENES AL FIRESTORE NO ME FUNCIONA, NO HE SIDO CAPAZ DE
-  DESCUBRIR COMO HACRELO*/
+  DESCUBRIR COMO HACERLO*/
   void confirmPressed(String tipo, String equipo, String anio, String image,
       BuildContext context) async {
     BichosExamen bicho = BichosExamen(
@@ -98,7 +99,6 @@ class _FormularioViewExamen extends State<FormularioViewExamen> {
                 )
               ],
             )
-
           ],
         ),
       ),

@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingViewExamen extends StatefulWidget {
+  // Vista para la cración del perfil una vez ha sido registrado
   OnBoardingViewExamen({Key? key}) : super(key: key);
 
   @override
@@ -26,6 +27,7 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
     checkExistingProfile();
   }
 
+  //Comprobación de la existencia del perfil
   void checkExistingProfile() async {
     String? idUser = FirebaseAuth.instance.currentUser?.uid;
     final docRef = db.collection("usuarios").doc(idUser);
@@ -63,22 +65,6 @@ class _OnBoardingViewExamenState extends State<OnBoardingViewExamen> {
       textoGuia: "Introducir apellidos",
       titulo: "APELLIDOS",
     );
-
-    /* FirebaseFirestore db = FirebaseFirestore.instance;
-
-    void btnConfirmarPressed() async {
-      UsuarioExamen usuario = UsuarioExamen(
-        nombre: iNombre.getText(),
-        apellidos: iApellidos.getText(),
-      );
-
-      db
-          .collection("usuarios")
-          .doc(FirebaseAuth.instance.currentUser?.uid)
-          .set(usuario.toFirestore())
-          .onError((e, _) => print("Error writing document: $e"));
-      Navigator.of(context).popAndPushNamed("/Login");
-    }*/
 
     return Scaffold(
       appBar: AppBar(
